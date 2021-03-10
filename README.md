@@ -1,6 +1,6 @@
 # CompetitiveProgrammingCorrectness
 
-![Top Competitive Coding Platforms](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.quora.com%2FWhat-is-the-dark-side-of-competitive-programming&psig=AOvVaw1Ic8oLCtscXcu6jFFk2ZRT&ust=1615506415904000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPj25cj0pu8CFQAAAAAdAAAAABAD)
+![Top Competitive Coding Platforms](https://qphs.fs.quoracdn.net/main-qimg-c30f21b7a8ff434c7fcb49b3078de06d)
 
 ## **About Project**
 The motivation of this research-oriented project is to help in doing the following things
