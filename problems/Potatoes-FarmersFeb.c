@@ -2,7 +2,7 @@
 //1 <= x <= 1000
 //1 <= y <= 1000
 
-
+#include<math.h>
 //https://www.codechef.com/viewsolution/43821175
 int sol1(int x, int y)
 {
@@ -145,3 +145,22 @@ int sol5(int a, int b)
     return c;
 }
 
+int main()
+{
+    int x,y;
+    if((x<1||x>1000)&&(y<1||y>1000))
+    {
+    return 0;
+    }
+    //Reminder : Run only one assert at a time to stop Ubuntu from crashing.
+    //__CPROVER_assert(sol1(x,y)==sol2(x,y),"sol1Vsol2");
+   //__CPROVER_assert(sol1(x,y)==sol3(x,y),"sol1Vsol3");
+    //__CPROVER_assert(sol1(x,y)==sol4(x,y),"sol1Vsol4");
+    //__CPROVER_assert(sol1(x,y)==sol5(x,y),"sol1Vsol5");
+    //__CPROVER_assert(sol2(x,y)==sol3(x,y),"sol2Vsol3");
+    //__CPROVER_assert(sol2(x,y)==sol4(x,y),"sol2Vsol4");
+    //__CPROVER_assert(sol2(x,y)==sol5(x,y),"sol2Vsol5");
+    //__CPROVER_assert(sol3(x,y)==sol4(x,y),"sol3Vsol4");
+    //__CPROVER_assert(sol3(x,y)==sol5(x,y),"sol3Vsol5");
+    //__CPROVER_assert(sol4(x,y)==sol5(x,y),"sol4Vsol5");
+}
