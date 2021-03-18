@@ -8,7 +8,7 @@ links = list()
 solution_links = list()
 problems = list()
 html_text = requests.get('https://www.codechef.com/problems/medium/').text
-soup = BeautifulSoup(html_text, 'lxml')
+soup = BeautifulSoup(html_text, 'html.parser')
 table = soup.find('table', class_ = 'dataTable')
 table_body = table.find('tbody')
 trs = table_body.find_all('tr', class_ = 'problemrow')
