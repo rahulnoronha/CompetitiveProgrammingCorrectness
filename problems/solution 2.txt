@@ -78,6 +78,83 @@ for(i=1;i<n;i++)
 return tabel[0][0];
 digcube=0;
 }
+=================================================================================================================
+==================================================================================================================
+Q3] 
+https://www.codechef.com/problems/NUM239/
+Constraints
+1≤T≤100
+1≤L≤R≤105
+
+
+#include<stdio.h>
+int main()
+{
+    int T;
+    scanf("%d",&T);
+    while (T--)
+    {
+        int L,R,REMINDER=0,COUNT=0;
+        scanf("%d%d",&L,&R);
+        for (int i = L; i <= R; i++)
+        {
+            REMINDER=i%10;
+            if(REMINDER==2 || REMINDER==3 || REMINDER==9)
+            COUNT++;
+        }
+        printf("%d\n",COUNT);
+    }
+    
+}
+------------------------------------------------------------------------
+https://www.codechef.com/viewsolution/43885620
+
+intsol1(int remainder, int i)
+{
+int count=0;
+for (int i = L; i <= R; i++)
+        {
+            REMINDER=i%10;
+            if(REMINDER==2 || REMINDER==3 || REMINDER==9)
+            COUNT++;
+        }
+        return count;
+----------------------------------------------------------------------------
+
+int main(void) {
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int l,r,i,pro=0,d;
+        scanf("%d %d",&l,&r);
+        for(i=l;i<=r;i++)
+        {
+           d=i%10;
+           if(d==2||d==3||d==9)
+           pro++;
+        }
+        printf("%d\n",pro);
+    }
+	// your code goes here
+	return 0;
+}
+
+https://www.codechef.com/viewsolution/41778161
+intsol2(int d ,int i)
+{
+int pro=0;
+ for(i=l;i<=r;i++)
+        {
+           d=i%10;
+           if(d==2||d==3||d==9)
+           pro++;
+        }
+        return pro;
+}
+
+
+
 
 
 
