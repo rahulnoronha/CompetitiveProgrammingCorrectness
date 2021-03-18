@@ -1,1 +1,15 @@
+This folder consists of the .c files which were taken from Online Coding platforms.
+
+Steps to add files to this folder:
+
+->Add the link to problem in a comment at the top of the .c file.
+->Add meaningful comments to your code to make it easier for others to read.
+->Mention input constraints at the top of the file and make sure the symbol matched the question. 
+    *0<x<1000 is not the same as 0<=x<=1000
+->Include necessary header files required from the program.
+->Include links to each solution starting from sol1.
+->Write the solution functions in the format necessary to process the file in CBMC.
+->Main functions will be written by the one running CBMC.
+->Name the file ProblemName.c in CamelCase for consistency.
+->Add meaningful comments to your code to make it easier for others to read.
 
