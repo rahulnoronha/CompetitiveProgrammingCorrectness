@@ -148,7 +148,7 @@ int sol5(int a, int b)
 int main()
 {
     int x,y;
-    if((x<1||x>1000)&&(y<1||y>1000))
+    if((x<1||x>1000)||(y<1||y>1000))
     {
     return 0;
     }
