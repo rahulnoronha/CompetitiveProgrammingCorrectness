@@ -164,3 +164,6 @@ int main()
     //__CPROVER_assert(sol3(x,y)==sol5(x,y),"sol3Vsol5");
     //__CPROVER_assert(sol4(x,y)==sol5(x,y),"sol4Vsol5");
 }
+
+//Tested and found no counterexample
+//Brute Force check faired better
