@@ -28,8 +28,8 @@ Steps to add files to this folder:
 3) Try to find some research paper on CBMC
 4) Create a flowchart of the process you are using to find problems and I need to create a flowchart of the process I take in running cbmc.
 
-6) We discussed about each person finding 20 problems within Sunday so you guys, who are already doing a commendable job in my opinion can speed up a tad bit.
-7) If you find a way of bruteforce testing mention it at the top of the .c file
-    7.1) If you don't find a way of bruteforce testing, but think it can be found then report that in a comment.
-8) If you have any doubts google it at first, text or call your teammates next and if no one is able to help document your doubt (to respect his time) and ask it to Viraj sir.
+5) We discussed about each person finding 20 problems within Sunday so you guys, who are already doing a commendable job in my opinion can speed up a tad bit.
+6) If you find a way of bruteforce testing mention it at the top of the .c file
+    6.1) If you don't find a way of bruteforce testing, but think it can be found then report that in a comment.
+7) If you have any doubts google it at first, text or call your teammates next and if no one is able to help document your doubt (to respect his time) and ask it to Viraj sir.
 
