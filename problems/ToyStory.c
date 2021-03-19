@@ -38,7 +38,7 @@ int sol2(int size,char *string)
             count++;
         }
         }
-return 0;
+return count;
 }
 
 int main()
@@ -55,5 +55,5 @@ int main()
      __CPROVER_assert(sol1(n,y) == sol2(n, y), "sol1vsol2");
 }
 
-
+//Tested and Found Counter Example for 3 unwindings
 
