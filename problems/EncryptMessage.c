@@ -5,8 +5,9 @@
 |S|=N
 */
 //SOLUTION LINK -> https://www.codechef.com/viewsolution/41410161
-char *solution_1(int len,char *arr);
-char *solution_1(int len,char *arr)
+#include<stdlib.h>
+char *sol1(int len,char *arr);
+char *sol1(int len,char *arr)
 {
     char temp;
     int temp_forsize=len;
@@ -35,8 +36,8 @@ return arr;
 
 //SOLUTION LINK ->https://www.codechef.com/viewsolution/39466093
 
-char *solution_2(int len,char *arr);
-char *solution_2(int len,char *arr)
+char *sol2(int len,char *arr);
+char *sol2(int len,char *arr)
 {
     int i,n,check,k=0;
     char temp;
@@ -58,8 +59,14 @@ return arr;
 
 //third solution
 //SOLUTION LINK -> https://www.codechef.com/viewsolution/39502339
-char *solution_3(int len,char *arr);
-char *solution_3(int len,char *arr)
+
+void swap(char *p,char *q){
+    char temp=*p;
+    *p=*q;
+    *q=temp;
+}
+char *sol3(int len,char *arr);
+char *sol3(int len,char *arr)
 {
 
     int i;
@@ -82,4 +89,21 @@ char *solution_3(int len,char *arr)
 	    }
 return arr;
 }
+
+int main()
+{
+    int n;
+    if(n<1||n>100)
+    {
+    return 0;
+    }
+    int l = (n > 0 ? n : 1);
+    char x[l];
+    char *y = (n > 0 ? x : NULL);
+    
+     __CPROVER_assert(sol1(n,y) == sol2(n, y), "sol1vsol2");
+     __CPROVER_assert(sol1(n,y) == sol3(n, y), "sol1vsol3");
+     __CPROVER_assert(sol2(n,y) == sol3(n, y), "sol2vsol3");
+}
+
 
