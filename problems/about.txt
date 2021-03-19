@@ -2,8 +2,11 @@ This folder consists of the .c files which were taken from Online Coding platfor
 
 Steps to add files to this folder:
 
+->Upload it to your respective folders
 ->Add the link to problem in a comment at the top of the .c file.
 ->Add meaningful comments to your code to make it easier for others to read.
+-> If you find a way of bruteforce testing mention it at the top of the .c file
+    ->If you aren't able to find a bruteforce testing method but still think there exists one bring it up in a comment
 ->Mention input constraints at the top of the file and make sure the symbol matched the question. 
     *0<x<1000 is not the same as 0<=x<=1000
 ->Include necessary header files required from the program.
@@ -12,4 +15,21 @@ Steps to add files to this folder:
 ->Main functions will be written by the one running CBMC.
 ->Name the file ProblemName.c in CamelCase for consistency.
 ->Add meaningful comments to your code to make it easier for others to read.
+->After testing using cbmc I will flag each problem with:
+    ->Tested using cbmc and found/not found a counter example.
+    ->Bruteforce approach testing done/ not done.
+
+
+@Important for PPT Review 1 Submission
+->Literature Review
+1) https://www.aspiringminds.com/wp-content/uploads/2019/05/NER_Engineer_2019-V5 
+2) And the other research links posted in this document.
+     Eg. https://www.business-standard.com/article/economy-policy/just-around-25-of-india-s-workforce-is-female-says-mckinsey-report-118062000034_1.html
+3) Try to find some research paper on CBMC
+4) Create a flowchart of the process you are using to find problems and I need to create a flowchart of the process I take in running cbmc.
+
+6) We discussed about each person finding 20 problems within Sunday so you guys, who are already doing a commendable job in my opinion can speed up a tad bit.
+7) If you find a way of bruteforce testing mention it at the top of the .c file
+    7.1) If you don't find a way of bruteforce testing, but think it can be found then report that in a comment.
+8) If you have any doubts google it at first, text or call your teammates next and if no one is able to help document your doubt (to respect his time) and ask it to Viraj sir.
 
