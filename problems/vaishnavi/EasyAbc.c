@@ -7,12 +7,16 @@ Each function returns int, Takes one parameter, a string as arg
 */
 
 //https://www.codechef.com/viewsolution/41608116
+
+#include<stdio.h>
+#include<math.h>
+#include<string.h>
 int sol1(char s[])
 {
 	int n,first1=0,second1=0,first2=0,second2=0,first3=0,second3=0,x=0,y=0,z=0,max;
     n=strlen(s);
     if(strcmp(s,"aabcaaa")==0)
-        return 4;;
+        return 4;
     else
     {
         if(s[0]=='a')
@@ -212,3 +216,30 @@ int sol6(char s[])
 		}
 	}
 }
+
+int main()
+{
+    int n;
+    int m = (n > 0 ? n : 1);
+    if(m<1||m>105)
+    {
+       return 0;
+    }
+    char x[m];
+    char *y = (n > 0 ? x : NULL);
+  __CPROVER_assert(sol1(y)== sol2(y), "sol1vsol2");
+  __CPROVER_assert(sol1(y)== sol3(y), "sol1vsol3");
+  __CPROVER_assert(sol1(y)== sol4(y), "sol1vsol4");
+  __CPROVER_assert(sol1(y)== sol5(y), "sol1vsol5");
+  __CPROVER_assert(sol1(y)== sol6(y), "sol1vsol6");
+  __CPROVER_assert(sol2(y)== sol3(y), "sol2vsol3");
+  __CPROVER_assert(sol2(y)== sol4(y), "sol2vsol4");
+  __CPROVER_assert(sol2(y)== sol5(y), "sol2vsol5");
+  __CPROVER_assert(sol2(y)== sol6(y), "sol2vsol6");
+  __CPROVER_assert(sol3(y)== sol4(y), "sol3vsol4");
+  __CPROVER_assert(sol3(y)== sol5(y), "sol3vsol5");
+  __CPROVER_assert(sol3(y)== sol6(y), "sol3vsol6");
+  __CPROVER_assert(sol4(y)== sol5(y), "sol4vsol5");
+  __CPROVER_assert(sol4(y)== sol6(y), "sol4vsol6");
+  __CPROVER_assert(sol5(y)== sol6(y), "sol5vsol6");
+   }
