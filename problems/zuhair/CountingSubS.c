@@ -34,8 +34,8 @@ return (count*(count+1))/2;
 		}
 
 
-int sol2_buggy(int* srr , int z);
-int sol2_buggy(int* srr , int z)
+long int sol2_buggy(int* srr , int z);
+long int sol2_buggy(int* srr , int z)
 {
 int count;
 for(long long int i=0;i<z;i++)
