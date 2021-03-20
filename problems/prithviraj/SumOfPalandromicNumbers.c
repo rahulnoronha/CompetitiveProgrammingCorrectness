@@ -8,6 +8,11 @@ Subtask 2 (66 points) : 1 ≤ L ≤ R ≤ 10^5
 //SOLUTION LINK-> https://www.codechef.com/viewsolution/39987650
 // TRY CBMC OR BRUTE FORCE WHICHEVER SEEMS APPROPRIATE FOR THIS, I THINK CBMC IS BETTER FOR THIS!!
 
+#include <stdio.h>
+#include <stack.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
 long int sol1(int a,int b);
 long int sol1(int a,int b)    //finds the sum of palindrome numbers between range :[a,b]
@@ -72,9 +77,7 @@ int reverse(int n)
 
 //SOLUTION LINK-> https://www.codechef.com/viewsolution/39821768
 
-#include <string.h>
-#include <stdlib.h>
-#include <stdbool.h>
+
 
 long long int sol3(long long int l,long long int r);
 long long int sol3(long long int l,long long int r)
@@ -102,5 +105,19 @@ long long int sol3(long long int l,long long int r)
             }
         }
 return sum;
+}
+
+int main()
+{ 
+    int n,d;
+    if(n<1||d>n||r>100000)
+    {
+        return 0;
+    }
+    __CPROVER_assert(sol1(n,d) == sol2(n,d), "sol1vsol2");
+    __CPROVER_assert(sol1(n,d) == sol3(n,d), "sol1vsol3");
+    __CPROVER_assert(sol2(n,d) == sol3(n,d), "sol2vsol3");
+
+    return 0;
 }
 
