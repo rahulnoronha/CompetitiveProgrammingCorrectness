@@ -1,7 +1,7 @@
 //https://www.codechef.com/POPU2021/problems/EASYABC
 /*Easy abc. Six solutions under here.
 Constraints:
->	1<=n<=105 
+>	1<=n<=10^5 
 >	s[i] can either be 'a', 'b' or 'c'
 Each function returns int, Takes one parameter, a string as arg
 */
@@ -221,7 +221,7 @@ int main()
 {
     int n;
     int m = (n > 0 ? n : 1);
-    if(m<1||m>105)
+    if(m<1||m>100000)
     {
        return 0;
     }
@@ -243,3 +243,6 @@ int main()
   __CPROVER_assert(sol4(y)== sol6(y), "sol4vsol6");
   __CPROVER_assert(sol5(y)== sol6(y), "sol5vsol6");
    }
+   
+   //Tested EasyAbc.c with cbmc and no counter examples found
+   //Brute force Checking not done.
