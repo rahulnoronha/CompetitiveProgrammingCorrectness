@@ -9,7 +9,6 @@ Subtask 2 (66 points) : 1 ≤ L ≤ R ≤ 10^5
 // TRY CBMC OR BRUTE FORCE WHICHEVER SEEMS APPROPRIATE FOR THIS, I THINK CBMC IS BETTER FOR THIS!!
 
 #include <stdio.h>
-#include <stack.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -110,7 +109,7 @@ return sum;
 int main()
 { 
     int n,d;
-    if(n<1||d>n||r>100000)
+    if(n<1||d>n||d>100000)
     {
         return 0;
     }
@@ -121,3 +120,5 @@ int main()
     return 0;
 }
 
+//Tested SumOfPalandromicNumbers.c using CBMC and found no counter examples
+//Did not try bruteforce check
