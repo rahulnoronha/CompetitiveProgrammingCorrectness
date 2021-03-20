@@ -4,7 +4,7 @@
 1≤d≤n
 1≤ai≤10^6 where Ai is the ith element of array
 */
-
+#include<stdio.h>
 
 //SOLUTION LINK -> https://www.codechef.com/viewsolution/36212673
 //TRY BRUTE FORCE !!
@@ -28,7 +28,7 @@ return arr;
 //SOLUTION LINK -> https://www.codechef.com/viewsolution/40449471
 //TRY BRUTE FORCE !!
 
-#include<bits/stdc++.h>
+
 
 long int *sol2(long int n,long int r,long int *v);  //r is the same constraint variable as d
 long int *sol2(long int n,long int r,long int *v)
@@ -43,6 +43,20 @@ long int *sol2(long int n,long int r,long int *v)
 	return vi;
 }
 
+int main()
+{
+long int n;
+long int d;
+if(n<1||n>100000||d<1||d>n)
+{
+    return 0;
+}
+ long int m = (n > 0 ? n : 1);
+ long int x[m];
+ long int *y = (n > 0 ? x : NULL);
+  __CPROVER_assert(sol1(n,d,y)==sol2(n,d,y),"sol1vsol2");
+  //Tested using CBMC and found a counter example for unwinding 3
+}
 
 
 
