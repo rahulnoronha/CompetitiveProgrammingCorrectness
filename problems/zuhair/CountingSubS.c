@@ -15,6 +15,7 @@ long int *sol1(char *str,int i)
 {
 count++;
    }
+                            }
 return count+(((count-1)*(count))/2);
 }
 
@@ -25,23 +26,25 @@ long int *sol2(int *arr,int a);
 long int *sol2(int *arr,int a)
 {
 int count = 0;
-for(long long int i=0;i<a;i++)
+for(long long int i=0;i<a;i++){
    if(arr[i]=='1')
       {
          count++;
-         }
+         }                   
+                               } 
 return (count*(count+1))/2; 
-		}
+}
 
 
 long int sol2_buggy(int* srr , int z);
 long int sol2_buggy(int* srr , int z)
 {
 int count;
-for(long long int i=0;i<z;i++)
+for(long long int i=0;i<z;i++){
    if(srr[i]=='1')
       {
          count++;
          }
+                              }
 return (count*(count+1))/2; 
 }
