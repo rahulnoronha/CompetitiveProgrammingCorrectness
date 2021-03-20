@@ -12,7 +12,7 @@ int sol1(int *arr, int len)
 int c=0 , i;
 for(i=0;i<len;i++) arr[i]=0;
         {
-            arr[a[i]-'A']++;
+            arr[arr[i]-'A']++;
         }
         for(i=0;i<100;i++)
         {
@@ -32,7 +32,7 @@ int sol2(int *arr, int len)
 int count=0, i;
 for(i=0;i<len;i++) arr[i]=0;
         {
-            arr[a[i]-65]++;
+            arr[arr[i]-65]++;
         }
         for(i=0;i<58;i++)
         {
@@ -52,22 +52,23 @@ int sol3(int *str, int len)
 {
 int small[26];
 int capital[26];
-for(i=0;i<26;i++)
+int ans;
+for(int i=0;i<26;i++)
 	    {
 	        small[i]=0;
 	        capital[i]=0;
 	    }
 	    
-	    for(i=0;i<len;i++)
+	    for(int i=0;i<len;i++)
 	    {
-	        ch=str[i];
+	        int ch=str[i];
 	        if(islower(ch))
 	        small[ch-'a']++;
 	        else
 	        capital[ch-'A']++;
 	    }
 	    
-	    for(i=0;i<26;i++)
+	    for(int i=0;i<26;i++)
 	    {
 	    ans+=(small[i]+1)/2;
 	    ans+=(capital[i]+1)/2;
@@ -96,3 +97,28 @@ for(i=0;i<len;i++)
           }
    return sum ;
 }
+
+int main()
+{
+    int n;
+    if(n<1||n>200)
+    {
+        return 0;
+    }
+     int m = (n > 0 ? n : 1);
+     int x[m];
+     int z[m];
+     int *y = (n > 0 ? x : NULL);
+     int *w = (n > 0 ? z : NULL);
+     __CPROVER_assert(sol1(y,n)==sol2(y,n),"sol1vsol2");
+     __CPROVER_assert(sol1(y,n)==sol3(y,n),"sol1vsol3");
+     __CPROVER_assert(sol1(y,n)==sol4(y,w,n),"sol1vsol4");
+     __CPROVER_assert(sol2(y,n)==sol3(y,n),"sol2vsol3");
+     __CPROVER_assert(sol2(y,n)==sol4(y,w,n),"sol2vsol4");
+     __CPROVER_assert(sol3(y,n)==sol4(y,w,n),"sol3vsol4");
+     
+}
+
+//Tested But1Get1.c and found no counter example.
+//Did not perform brute force check.
+
