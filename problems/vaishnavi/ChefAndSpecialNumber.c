@@ -5,6 +5,9 @@ Constraints:
 >	1<=num/n<=10^6
 */
 
+#include<math.h>
+#include<string.h>
+
 //https://www.codechef.com/viewsolution/43387343
 const char* sol1(int num)
 {
@@ -56,6 +59,7 @@ const char* sol1(int num)
 const char* sol2(int num)
 {
 	int sum=0,i;
+	char s[1000000];
 	for(i=0;i<strlen(s);i++)
 	sum=sum+s[i];
 	if(sum%strlen(s)==0)
@@ -68,6 +72,7 @@ const char* sol2(int num)
 //https://www.codechef.com/viewsolution/43394402
 const char* sol3(int n)
 {
+int r, c=0, sum=0;
 	while(n>0)
 	{
 	    r=n%10;
@@ -80,3 +85,21 @@ const char* sol3(int n)
 	else
 		return "Try again\n";
 }
+
+
+int main()
+{
+    int n;
+    if(n<1||n>1000000)
+    {
+        return 0;
+    }
+    __CPROVER_assert(sol1(n)==sol2(n),"sol1vsol2");
+    __CPROVER_assert(sol1(n)==sol3(n),"sol1vsol2");
+    __CPROVER_assert(sol2(n)==sol3(n),"sol2vsol3");
+    
+}
+
+//Tested with CBMC, but test took too long to run which means it is most likely unsatisfiable since if it was satisfiable it would throw the counterexample quickly.
+//Brute Force testing not done.
+
