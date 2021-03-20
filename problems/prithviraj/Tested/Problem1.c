@@ -6,12 +6,7 @@ THIS PROBLEM DOES'NT HAVE ANY CONSTRAINTS
 */
 // I HAVE FOUND ONE RECURSIVE SOLUTION AND ONE ITERATIVE(SOL1 & SOL2), SO I WOULD PREFER CBMC
 //SOLUTION LINK ->  https://www.codechef.com/viewsolution/37290889
-
-int sol1(int a,int b);
-int sol1(int a,int b)
-{
-    return f(f(a) + f(b));
-}
+int f(int n);
 int f(int n)
 {
     int rev = 0;
@@ -22,7 +17,11 @@ int f(int n)
     }
     return rev;
 }
-
+int sol1(int a,int b);
+int sol1(int a,int b)
+{
+    return f(f(a) + f(b));
+}
 //solution link -> https://www.codechef.com/viewsolution/28069448
 
 int sol2(int num1,int num2);
@@ -148,3 +147,12 @@ int sol4(int x,int y)
 return j;
 }
 
+int main()
+{
+    int a, b;
+    __CPROVER_assert(sol1(a,b)==sol2(a,b),"sol1vsol2");
+    __CPROVER_assert(sol1(a,b)==sol3(a,b),"sol1vsol2");
+    __CPROVER_assert(sol2(a,b)==sol3(a,b),"sol1vsol2");
+    //Tested with CBMC and found no counterexample
+    //Did not create a brute force checker
+}
