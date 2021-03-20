@@ -3,7 +3,7 @@
 
 /*ArrangingCupCakes: https://www.codechef.com/problems/RESQ
 1 <= n <= 10^8
-There are 4 solutions under here, Wach of them had different runtimes and memories.
+There are 4 solutions under here, Each of them had different runtimes and memories.
 */
 
 //https://www.codechef.com/viewsolution/40475337
@@ -94,3 +94,24 @@ int sol4(int n)
 	}
 	return ((n/i)-i);
 }
+
+int main()
+{
+    int n;
+    if( n<1||n>100000000)
+    {
+        return 0;
+    }
+    __CPROVER_assert(sol1(n)==sol2(n),"sol1vsol2");
+    __CPROVER_assert(sol1(n)==sol3(n),"sol1vsol3");
+    __CPROVER_assert(sol1(n)==sol4(n),"sol1vsol4");
+    __CPROVER_assert(sol2(n)==sol3(n),"sol2vsol3");
+    __CPROVER_assert(sol2(n)==sol4(n),"sol2vsol4");
+    __CPROVER_assert(sol3(n)==sol4(n),"sol3vsol4");
+}
+ 
+ //Tested with CBMC, but test took too long to run which means it is most likely unsatisfiable since if it was satisfiable it would throw the counterexample quickly.
+//Brute Force testing not done.
+ 
+ 
+ 
