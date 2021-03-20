@@ -36,7 +36,7 @@ return s;
 //SOLUTION LINK-> https://www.codechef.com/viewsolution/40223743
 
 #include<stdlib.h>
-
+int ispalin(int);
 int sol2(int x,int y);
 int sol2(int x,int y)
 {
@@ -49,7 +49,7 @@ int sol2(int x,int y)
 return sum;
 }
 int reverse(int);
-int ispalin(int);
+
 
 int ispalin(int n)
 {
