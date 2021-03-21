@@ -13,8 +13,8 @@ Constraints:
 
 //https://www.codechef.com/viewsolution/40531763
 char* sol1(char* cardRow)
-{
-	count=0;
+{	
+	int i, count=0;
 	for(i=0;i<strlen(cardRow);i++)
 	{
 	    if(cardRow[i] == '1')
@@ -34,6 +34,7 @@ char* sol1(char* cardRow)
 //https://www.codechef.com/viewsolution/33684834
 char* sol2(char* s)
 {
+	int i,j,k,l,m,n;
 	m=1;
 	l=strlen(s);
 	for (i=0;i<l;i++)
