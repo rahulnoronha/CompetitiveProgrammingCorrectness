@@ -4,6 +4,8 @@
 //1 ≤ K < N ≤ 100
 //1 ≤ Wi ≤ 100000 (105)
 
+#include<stdio.h>
+#include<stdlib.h>
 //https://www.codechef.com/viewsolution/42405178
 long int *sol1(int *a, int n);
 long int *sol1(int *a, int n)
@@ -55,3 +57,21 @@ for(i=0;i<n-1;i++)
 	    }
 return sum1-sum;
 }
+
+int main()
+{
+    int n;
+    if(n<1||n>100)
+    {
+        return 0;
+    }
+    
+    int m = (n > 0 ? n : 1);
+    int x[m];
+    int *y = (n > 0 ? x : NULL);
+    __CPROVER_assert(sol1(y,n)==sol2(y,n),"sol1vsol2");
+    
+}
+
+//Tested using CBMC and found counter example with unwinding 2 meaning sol1!=sol2.
+//Brute Force Checking not done.

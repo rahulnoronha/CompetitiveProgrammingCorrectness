@@ -1,17 +1,18 @@
 //https://www.codechef.com/problems/STRCH/
 //1≤T≤1,000 
-//1≤N≤106
+//1≤N≤10^6
 //S contains only lowercase English letters
 //X is a lowercase English letter
 //the sum of N over all test cases does not exceed 106
-
+#include<stdlib.h>
 //https://www.codechef.com/viewsolution/25938639
 
-int sol1(char *str, int n, int i);
-int sol1(char *str, int n, int i)
+long int sol1(char *str, long long int n, char c);
+long int sol1(char *str, long long int n, char c)
 {
 int count=0;
-int k;
+int k=0;
+int i=0;
 for(i=0;i<n;i++)
 	    {
 	        k++;
@@ -27,11 +28,11 @@ for(i=0;i<n;i++)
 
 //https://www.codechef.com/viewsolution/28043605
 
-long int sol2(char* s, int flag, int res);
-long int sol2(char* s, int flag, int res)
+long int sol2(char* s,long int n, char c);
+long int sol2(char* s,long int n, char c)
 {
-res=0;
-flag=-1;
+int res=0;
+int flag=-1;
  for(int i=0;s[i]!='\0';i++)
         {
             if(s[i]==c)
@@ -49,3 +50,20 @@ flag=-1;
         }
         return res;
 }
+
+int main()
+{
+    long int n;
+    char m;
+    if(n<1||n>1000000)
+    {
+        return 0;
+    }
+    long int p = (n > 0 ? n : 1);
+    char x[p];
+    long long int q = p;
+    char *y = (n > 0 ? x : NULL);
+    __CPROVER_assert(sol1(y,q,m)==sol2(y,n,m),"sol1vsol2");
+}
+
+
