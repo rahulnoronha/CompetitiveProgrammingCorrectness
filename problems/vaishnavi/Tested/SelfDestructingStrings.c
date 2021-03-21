@@ -1,4 +1,4 @@
-#incldue<stdio.h>
+#include<stdio.h>
 #include<math.h>
 #include<string.h>
 #include<stdlib.h>
@@ -38,7 +38,7 @@ long long int sol1(char* str)
 
 
 //https://www.codechef.com/viewsolution/40921913
-long long int sol2(char*)
+long long int sol2(char* s)
 {
     long long int i=0,n=0,count=0,count1=0,count2=0,count3=0;
 	  while(s[i]!='\0')
@@ -97,6 +97,7 @@ long long int sol3(char* str)
 			return res; 
 	    }     
 }
+}
 
 int main()
 {
@@ -114,3 +115,5 @@ int main()
 }
 
 
+//Tested using cbmc and found a counter  example using wnwind 3 
+//Brute Force Check not done
