@@ -1,0 +1,4 @@
+Many mistakes in your code
+Need to pass proper inputs and use proper data types
+You had passed i which is the looping variable as input to functions
+Also in all places 10^6 looked like 106
