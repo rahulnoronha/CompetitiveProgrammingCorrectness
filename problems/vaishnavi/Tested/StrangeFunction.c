@@ -147,3 +147,5 @@ int main()
 	__CPROVER_assert(sol2(a,n)==sol3(a,n),"sol1vsol2");
 
 }
+//tested using CBMC and found a counter example for uniwinding -- 3
+//Brute force not done
