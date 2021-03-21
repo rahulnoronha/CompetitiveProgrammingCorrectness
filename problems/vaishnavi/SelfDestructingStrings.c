@@ -97,3 +97,20 @@ long long int sol3(char* str)
 			return res; 
 	    }     
 }
+
+int main()
+{
+    int n;
+    if (n<1||n>1000000)
+    {
+        return 0;
+    }
+    char m = (n>0?n:1);
+    char *y = (n>0?y:NULL);
+    __CPROVER_assert(sol1(y)==sol2(y),"sol1vsol2");
+    __CPROVER_assert(sol1(y)==sol2(y),"sol1vsol3");
+    __CPROVER_assert(sol1(y)==sol2(y),"sol2vsol3");
+    
+}
+
+
