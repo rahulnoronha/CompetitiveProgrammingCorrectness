@@ -86,3 +86,20 @@ char* sol3(char* s)
     else
         return "WIN\n";
 }
+
+int main()
+{
+    int n;
+    if(n<1||n>100000);
+    {
+        return 0;
+    }
+    int m = (n>0?n:1);
+    char x[m];
+    char *y = (n>0?x:NULL);
+    __CPROVER_assert(sol1(y)==sol2(y),"sol1vsol2");
+    __CPROVER_assert(sol1(y)==sol3(y),"sol1vsol2");
+    __CPROVER_assert(sol2(y)==sol3(y),"sol1vsol2");
+}
+
+

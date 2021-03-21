@@ -140,7 +140,7 @@ int sol3(long long int a, long long int n)
 int main()
 {
 	long long int a, n;
-	if(a<1 || a>100001 || n<1 || n>4 )
+	if(a<1 || a>100000 || n<1 || n>4 )
 		return 0;
 	__CPROVER_assert(sol1(a,n)==sol2(a,n),"sol1vsol2");
 	__CPROVER_assert(sol1(a,n)==sol3(a,n),"sol1vsol3");

@@ -100,3 +100,20 @@ int sol3(int n, char* source)
 	if(boo==1)
 		return (2*n);
 }
+
+int main()
+{
+    int n;
+    if(n<0||n>100000)
+    {
+        return 0;
+    }
+    int m = (n>0?n:1);
+    char x[m] ;
+    char* y = (n>0?x:NULL);
+    __CPROVER_assert(sol1(n,y)==sol2(n,y),"sol1vsol2");
+    __CPROVER_assert(sol1(n,y)==sol3(n,y),"sol1vsol3");
+    __CPROVER_assert(sol2(n,y)==sol3(n,y),"sol1vsol2");
+}
+
+
