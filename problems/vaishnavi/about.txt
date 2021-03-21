@@ -1,5 +1,0 @@
-Declare helper functions before actual solutions that use these helper functions
-Missing variable names
-Uninitialised and Undeclared Variables
-Error in writing exponent ^ while showing limits of input variables
-Some programs had missing limits for inputs
