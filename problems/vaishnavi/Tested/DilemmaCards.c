@@ -98,8 +98,9 @@ int main()
     char x[m];
     char *y = (n>0?x:NULL);
     __CPROVER_assert(sol1(y)==sol2(y),"sol1vsol2");
-    __CPROVER_assert(sol1(y)==sol3(y),"sol1vsol2");
-    __CPROVER_assert(sol2(y)==sol3(y),"sol1vsol2");
+    __CPROVER_assert(sol1(y)==sol3(y),"sol1vsol3");
+    __CPROVER_assert(sol2(y)==sol3(y),"sol2vsol3");
 }
 
-
+//Tested using CBMC and found no no counter examples.
+//Brute Force checking not done.
