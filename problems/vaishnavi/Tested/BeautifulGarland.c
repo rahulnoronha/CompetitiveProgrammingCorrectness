@@ -161,7 +161,6 @@ char* sol3(char* str)
 	if(m!=n)
 	{ 
 		return "no\n";
-		continue;
 	}
 	else
 	{
@@ -175,7 +174,7 @@ char* sol3(char* str)
 	    if(c==0||c==2)
 	    	return "yes\n";
 	    else
-	    	return"no\n");
+	    	return"no\n";
 	}
 }
 
@@ -245,3 +244,8 @@ int main()
   __CPROVER_assert(sol2(s)==sol3(s),"sol2vsol3");
 	
 }
+
+
+//Test conducted on cbmc for unwindings of 1,2,3,4,5 and 10 and they are all Unsatisfiable 
+//which implies sol1==sol2, sol1==sol3, sol2==sol3
+//Brute force approach not tried.
