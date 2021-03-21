@@ -12,11 +12,9 @@ I've used strncpy to get the passed string s to the size 2*n according to the qu
 */
 
 //https://www.codechef.com/viewsolution/40016333
-int sol1(int n, char* s)
+int sol1(int N, char* arr)
 {
 	int i,a=0,b=0,ans=2*N;
-    char arr[2*N];
-    strncpy(arr,s,2*N);
     for(i=0; i<=2*N-2; i=i+2)
     {
         if(arr[i]=='1')
@@ -40,11 +38,9 @@ int sol1(int n, char* s)
 
 
 //https://www.codechef.com/viewsolution/30687024
-int sol2(int n, char* s)
+int sol2(int n, char* str)
 {
 	int a=0,b=0,flag,i,k1=0,k2=0;
-    char str[2*n];
-    strncpy(str,s,2*n);
     for(i=0;i<2*n;i++)
     {
 		if(str[i]=='1'&&i%2==0)
@@ -55,7 +51,7 @@ int sol2(int n, char* s)
         else if(str[i]=='1'&&i%2==1)
         {
         	b++;
-            k++;
+            k2++;
         }
         else if(str[i]=='0'&&i%2==1)
         	k2++;
@@ -78,16 +74,16 @@ int sol2(int n, char* s)
 int sol3(int n, char* source)
 {
 	int i,f=0,f1=0,l=0,l1=0,boo=1;
-	strncpy(s,source,2*n);
 	for(i=0;i<2*n;i++)
 	{
 	    if(i%2==0)
 	    {
-	        f+=s[i]-'0';f1++;
+	        f+=source[i]-'0';f1++;
 	    }
 	    else
 	    {
-	        l+=s[i]-'0';l1++;
+	        l+=source[i]-'0';
+	        l1++;
 	    }
 		//printf("%ld %ld %ld %ld",f,l,f1,l1);
 	    if((l>(n-f1)+f)||(f>(n-l1)+l))
@@ -108,7 +104,7 @@ int main()
     {
         return 0;
     }
-    int m = (n>0?n:1);
+    int m = (n>0?2*n:1);
     char x[m] ;
     char* y = (n>0?x:NULL);
     __CPROVER_assert(sol1(n,y)==sol2(n,y),"sol1vsol2");
