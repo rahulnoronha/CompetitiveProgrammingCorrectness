@@ -51,6 +51,21 @@ char* sol2(long long int n, long long int k)
 	}
 	else
 	{
-	    return "YES"//;
+	    return "YES";
 	}
 }
+
+
+int main()
+{
+    int m,n;
+    if(m<0||n<0)
+    {
+        return 0;
+    }
+    __CPROVER_assert(sol1(m,n)==sol2(m,n),"sol1vsol2");
+}
+//Tested with CBMC and counter example found for unwinding 1
+//Brute force Check not done
+
+

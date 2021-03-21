@@ -84,7 +84,7 @@ long long int sol3(long long int ts)
 
 
 //https://www.codechef.com/viewsolution/35527372
-long long int sol4(long long int TS;)
+long long int sol4(long long int TS)
 {
 	while (TS % 2 == 0)
 		TS = TS / 2;
@@ -96,5 +96,23 @@ long long int sol4(long long int TS;)
 }
 
 
+int main()
+{
+    long long int n;
+    if(n<1)
+    {
+        return 0;
+    }
+    __CPROVER_assert(sol1(n)==sol2(n),"sol1vsol2");
+    __CPROVER_assert(sol1(n)==sol3(n),"sol1vsol3");
+    __CPROVER_assert(sol1(n)==sol4(n),"sol1vsol4");
+    __CPROVER_assert(sol2(n)==sol3(n),"sol2vsol3");
+    __CPROVER_assert(sol2(n)==sol4(n),"sol2vsol4");
+    __CPROVER_assert(sol3(n)==sol4(n),"sol3vsol4");
 
+}
+
+//Tested using CBMC and found 3/6 satisfiable cases for unwinding 1 and 5/6 satisfiable cases for unwinding 2
+//Conclusion was only solution 4 and 1 are equivalent
+//Brute Force not done
 

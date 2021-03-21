@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+//Vaishnavi you hadn't included this 10^18=>n>=2
 //For sol1
 #define ll unsigned long long int
 #define max 1000000000
@@ -16,6 +17,54 @@ Because this was a repetition, I changed every ull in sol2's context to ll
 SOLUTION 1: https://www.codechef.com/viewsolution/10759301
 91 Lines 0.54 sec 2M
 */
+
+ll mult_mod(ll a,ll b,ll mod);
+ll mult_mod(ll a,ll b,ll mod)
+{
+	ll a_low=a%max;
+	ll a_high=a/max;
+	ll b_low=b%max;
+	ll b_high=b/max;
+	ll value,value1,value2,i;
+	value=(a_high*b_high)%mod;
+	for(i=1;i<=9;i++)
+	{
+		value=(value*10)%mod;
+	}
+	value1=(a_high*b_low)%mod;
+	value2=(a_low*b_high)%mod;
+	value1=(value1+value2)%mod;
+	value=(value+value1)%mod;
+	for(i=1;i<=9;i++)
+	{
+		value=(value*10)%mod;
+	}
+	value=(value+(a_low*b_low)%mod)%mod;
+	return value;
+}
+
+ll power_mod(ll a,ll m,ll p);
+ll power_mod(ll a,ll m,ll p)
+{
+	ll value=1;
+	while(m>0)
+	{
+		if(m%2==1)
+		{
+		    if(value>max||a>max)
+			    value=mult_mod(value,a,p);
+			else
+			    value=(value*a)%p;
+		}
+		if(a>max)
+		    a=mult_mod(a,a,p);
+		else
+		    a=(a*a)%p;
+		m>>=1;
+	}
+	return value;
+}
+
 
 ll primes1(ll n)
 {
@@ -52,50 +101,7 @@ ll primes1(ll n)
 	return 1;
 }
 
-ll power_mod(ll a,ll m,ll p)
-{
-	ll value=1;
-	while(m>0)
-	{
-		if(m%2==1)
-		{
-		    if(value>max||a>max)
-			    value=mult_mod(value,a,p);
-			else
-			    value=(value*a)%p;
-		}
-		if(a>max)
-		    a=mult_mod(a,a,p);
-		else
-		    a=(a*a)%p;
-		m>>=1;
-	}
-	return value;
-}
 
-ll mult_mod(ll a,ll b,ll mod)
-{
-	ll a_low=a%max;
-	ll a_high=a/max;
-	ll b_low=b%max;
-	ll b_high=b/max;
-	ll value,value1,value2,i;
-	value=(a_high*b_high)%mod;
-	for(i=1;i<=9;i++)
-	{
-		value=(value*10)%mod;
-	}
-	value1=(a_high*b_low)%mod;
-	value2=(a_low*b_high)%mod;
-	value1=(value1+value2)%mod;
-	value=(value+value1)%mod;
-	for(i=1;i<=9;i++)
-	{
-		value=(value*10)%mod;
-	}
-	value=(value+(a_low*b_low)%mod)%mod;
-	return value;
-}
 
 ll sol1(ll n)
 {
@@ -189,7 +195,7 @@ ll sol2(ll n)
 	if(n==2) 
 	{
 		return 2; 
-		continue;
+		
 	}
 	if((n%2)==0) 
 		n--;
@@ -197,3 +203,19 @@ ll sol2(ll n)
 		n-=2;
 	return n;
 }
+
+
+int main()
+{
+    long long int n;
+    if (n<2)
+    {
+        return 0;
+    }
+    __CPROVER_assert(sol1(n)==sol2(n),"sol1vsol2");
+    
+}
+
+//Tested with CBMC and found that it has no counterexample
+//Brute force check not done
+

@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
 /*
 Charlie And Prime Numbers: https://www.codechef.com/problems/CDQU1
 Subtask 1: (30 Points): M <=10^3, N<=10^3
@@ -18,7 +20,7 @@ int prime[5000000];
 //Points scored, only 30, Correct solution but TLE, So shoudln't matter.
 long long int sol1(int m, int n)
 {
-	long long int x,y,z,k,sum=0;
+	long long int x,y,z,k,sum=0,s;
     while(m<=n)
     {
     	if(m==1)
@@ -101,6 +103,23 @@ long long int sol3(int m, int n)
     for(i=y;i<=x;i++)
         if(prime[i]==0)
             sum+=i;
-    }
+    
     return sum;
 }
+
+int main()
+{
+    int m,n;
+    if(n<1||m<1||n>5000000||m>5000000)
+    {
+        return 0;
+    }
+    __CPROVER_assert(sol1(m,n)==sol2(m,n),"sol1vsol2");
+    __CPROVER_assert(sol1(m,n)==sol3(m,n),"sol1vsol2");
+    __CPROVER_assert(sol2(m,n)==sol3(m,n),"sol1vsol2");
+}
+
+//Tested using CBMC program takes long time to run suggesting Unsatisfiability
+//Brute Force check not done
+
+
