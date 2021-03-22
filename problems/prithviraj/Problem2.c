@@ -36,7 +36,8 @@ int reverse(int x)
 int sol1(int N);
 int sol1(int N)
 {
-    for(int i=N+1;1;i++)
+int i;
+    for(i=N+1;1;i++)
                 if(ispalin(i)==1)
                     break;
             return i;
@@ -118,5 +119,6 @@ int main()
     __CPROVER_assert(sol2(k)==sol3(k),"sol2vsol3");
 }
 
-
+//Tested using CBMC and found counter example for unwind 2. It shows sol3 is different from sol1 and sol2
+//Brute Force not done
 
