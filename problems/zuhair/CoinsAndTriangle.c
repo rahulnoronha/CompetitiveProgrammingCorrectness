@@ -59,3 +59,6 @@ int main()
 
     __CPROVER_assert(sol1(num)==sol2(num),"sol1vsol2");
 }
+
+//Tested using CBMC and found no counterexample
+//Brute Force check not done
