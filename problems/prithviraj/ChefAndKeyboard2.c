@@ -78,5 +78,7 @@ int main()
 
 }
 
+//Tested with CBMC and found no counterexamples. Unsatisfiable meaning sol1==sol2==sol3
+//Brute Force Check not done
 
 
