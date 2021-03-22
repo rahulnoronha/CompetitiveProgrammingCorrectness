@@ -186,12 +186,12 @@ int main()
             return 0;
     }
 
-    _CPROVER_assert(sol1(s1,s2)==sol2(s1,s2),"sol1vsol2");
-    _CPROVER_assert(sol1(s1,s2)==sol3(s1,s2),"sol1vsol3");
-    _CPROVER_assert(sol1(s1,s2)==sol4(s1,s2),"sol1vsol4");
-    _CPROVER_assert(sol2(s1,s2)==sol3(s1,s2),"sol2vsol3");
-    _CPROVER_assert(sol2(s1,s2)==sol4(s1,s2),"sol2vsol4");
-    _CPROVER_assert(sol3(s1,s2)==sol4(s1,s2),"sol3vsol4");
+    __CPROVER_assert(sol1(s1,s2)==sol2(s1,s2),"sol1vsol2");
+    __CPROVER_assert(sol1(s1,s2)==sol3(s1,s2),"sol1vsol3");
+    __CPROVER_assert(sol1(s1,s2)==sol4(s1,s2),"sol1vsol4");
+    __CPROVER_assert(sol2(s1,s2)==sol3(s1,s2),"sol2vsol3");
+    __CPROVER_assert(sol2(s1,s2)==sol4(s1,s2),"sol2vsol4");
+    __CPROVER_assert(sol3(s1,s2)==sol4(s1,s2),"sol3vsol4");
 }
 
 
