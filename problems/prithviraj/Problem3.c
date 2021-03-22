@@ -96,7 +96,7 @@ int sol4(char *a[11],char *b[6])
 int sol5(char *A[11],char *B[6]);
 int sol5(char *A[11],char *B[6])
 {
-    return strstr(A,B)!=NULL);
+    return (strstr(A,B)!=NULL);
 }
 
 
@@ -116,4 +116,7 @@ int main()
     __CPROVER_assert(sol3(A,B)==sol5(A,B),"sol3vsol5");
     __CPROVER_assert(sol4(A,B)==sol5(A,B),"sol4vsol5");
 }
+
+//Tested using CBMC and found no counterexamples
+//Brute Force check not done
 
