@@ -4,8 +4,8 @@
 //1≤N≤1000
 
 //https://www.codechef.com/viewsolution/43733147
-//#include <stdio.h>
-//#include <math.h>
+#include <stdio.h>
+#include <math.h>
 
 int sol1(int n);
 int sol1(int n)
@@ -76,3 +76,5 @@ int main()
     __CPROVER_assert(sol2(num)==sol3(num),"sol2vsol3");
 }
 	
+//Tested with CBMC and found no counterexample
+//Brute Force Check not done
