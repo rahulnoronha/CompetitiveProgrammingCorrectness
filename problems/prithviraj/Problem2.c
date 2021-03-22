@@ -1,6 +1,6 @@
 //https://www.codechef.com/problems/CMB02
 /*
-no constraints given for this problem
+given positive integer K of not more than 5 digits.
 */
 
 //TRY CBMC
