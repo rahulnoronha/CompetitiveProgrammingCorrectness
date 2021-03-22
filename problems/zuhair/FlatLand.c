@@ -76,6 +76,7 @@ int sol3(int n)
 //#include <stdio.h>
 int sol4(int n);
 int sol4(int n)
+{
     for(int i=0;i<t;i++)
     {
         int j,f,c=0;
@@ -97,10 +98,8 @@ int main()
     int num;
     if(num<1||num>1000) return 0;
 
-    __CPROVER_assert(sol1(num)==sol2(num),"sol1vsol2");
     __CPROVER_assert(sol1(num)==sol3(num),"sol1vsol3");
     __CPROVER_assert(sol1(num)==sol4(num),"sol1vsol4");
-    __CPROVER_assert(sol2(num)==sol3(num),"sol2vsol3");
-    __CPROVER_assert(sol2(num)==sol4(num),"sol2vsol4");
+    __CPROVER_assert(sol3(num)==sol4(num),"sol3vsol4");
 }
 	
