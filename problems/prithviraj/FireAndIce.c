@@ -11,9 +11,9 @@
 long long int nways[1005];
 
 
-long long int ways(long long int n){
+long long int ways(long long int n, long long int m){
 	if (nways[n] != -1) return nways[n];
-	nways[n] = (ways(n-1) + ways(n-2));
+	nways[n] = (ways(n-1,m) + ways(n-2,m));
 	if (nways[n] >= m) nways[n] = nways[n] - m;
 	return nways[n];
 }
@@ -23,7 +23,7 @@ long long int sol1(long long int n,long long int m)
 {
     for (int j = 0; j <= n; j++) nways[j] = -1;
 		nways[1] = nways[2] = 2;
-		int ans = ways(n);
+		int ans = ways(n,m);
 		return ans % m;
 }
 
@@ -56,7 +56,7 @@ void power(long long int F[2][2],long long int n,long long int m)
 			multiply(F,M,m);
 }
 
-int fib(long long int n,long long int m)
+int fib1(long long int n,long long int m)
 {
   long long int F[2][2] = {{1,1},{1,0}};
   if(n==0)
@@ -68,14 +68,14 @@ long long int sol2(long long int n,long long int m);
 long long int sol2(long long int n,long long int m)
 {
     long long int sum=0;
-    return (2*fib(n,m))%m;
+    return (2*fib1(n,m))%m;
 }
 
 
 //https://www.codechef.com/viewsolution/19972971
 
 #include <stdlib.h>
-long long int f[1001];
+
 long long int sum(long long int a, long long int b, long long int m){
     return ((a % m) + (b % m) % m);
 }
@@ -85,6 +85,7 @@ long long int mul(long long int a, long long int b, long long int m){
 }
 
 long long int fib(long long int n, long long int m){
+long long int f[1001];
     if (n == 0){
         return 0;
     }
@@ -117,6 +118,7 @@ long long int fib(long long int n, long long int m){
 long long int sol3(long long int n,long long int m);
 long long int sol3(long long int n,long long int m)
 {
+long long int f[1001];
     long long int i;
     for(i = 0 ; i < 1001; i ++){
     	    f[i] = -1;
@@ -137,6 +139,8 @@ int main()
 }
 
 
+//Tested using CBMC and found no counter example
+//Brute Force check not done
 
 
 
