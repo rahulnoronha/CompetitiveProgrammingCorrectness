@@ -190,6 +190,11 @@ int main()
     {
         return 0;
      }
+ for(int i=0;(s1[i]!='\0'&&s2[i]!='\0');++i)
+ {
+  if(((int)s1[i]<97||(int)s1[i]>122)||((int)s2[i]<97||(int)s2[i]>122))
+   return 0;
+ }
 
     __CPROVER_assert(sol1(s1,s2)==sol2(s1,s2),"sol1vsol2");
     __CPROVER_assert(sol1(s1,s2)==sol3(s1,s2),"sol1vsol3");
