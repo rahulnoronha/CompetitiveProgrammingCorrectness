@@ -179,12 +179,17 @@ char *sol4(char *str1[300],char *str2[300])
 
 int main()
 {
-    char s1[20],s2[20];
-    for(int i=97;i<=122;++i)
+    int n,p;
+    int m = (n > 0 ? n : 1);
+    char x[m];
+    char *s1 = (n > 0 ? x : NULL);
+    int m = (p > 0 ? p : 1);
+    char z[m];
+    char *s2 = (p > 0 ? z : NULL);
+    if(n<1||n>20||p<1||p>20)
     {
-        if((s1[i]<97||s1[i]>122)||(s2[i]<97||s2[i]>122))
-            return 0;
-    }
+        return 0;
+     }
 
     __CPROVER_assert(sol1(s1,s2)==sol2(s1,s2),"sol1vsol2");
     __CPROVER_assert(sol1(s1,s2)==sol3(s1,s2),"sol1vsol3");
