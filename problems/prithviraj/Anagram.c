@@ -204,6 +204,7 @@ int main()
     __CPROVER_assert(sol3(s1,s2)==sol4(s1,s2),"sol3vsol4");
 }
 
-
+//Tested using cbmc and found no counterexamples
+//Brute force not tried
 
 
