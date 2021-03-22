@@ -1,6 +1,6 @@
 //https://www.codechef.com/problems/CMB03
 /*
-no constraints for this problem
+Given two binary strings, A (of length 10) and B (of length 5).
 */
 
 //try CBMC
