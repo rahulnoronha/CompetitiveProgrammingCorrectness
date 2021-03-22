@@ -71,9 +71,9 @@ int main()
         return 0;
 
 
-    _CPROVER_assert(sol1(n,m,c)==sol2(n,m,c),"sol1vsol2");
-    _CPROVER_assert(sol1(n,m,c)==sol3(n,m,c),"sol1vsol3");
-    _CPROVER_assert(sol2(n,m,c)==sol3(n,m,c),"sol2vsol3");
+    __CPROVER_assert(sol1(n,m,c)==sol2(n,m,c),"sol1vsol2");
+    __CPROVER_assert(sol1(n,m,c)==sol3(n,m,c),"sol1vsol3");
+    __CPROVER_assert(sol2(n,m,c)==sol3(n,m,c),"sol2vsol3");
 
 
 }
