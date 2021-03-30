@@ -25,8 +25,10 @@ char sol1(char *s)
             count=count+n;
         }
         if(count<=(11*l))
-        return 1;
+        // return YES
+		return 1;
         else
+	// return No
         return 0;
     }
 
@@ -52,8 +54,10 @@ char sol2(char *str)
 	        i++;
 	    }
 	    if((len+x) <= (11*len))
+		    // return YES
 	    return 1;
 	    else
+		    // return No
 	    return 0;
 }
 
