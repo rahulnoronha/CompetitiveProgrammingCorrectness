@@ -65,3 +65,7 @@ int main()
     if(string==NULL) return 0;
     __CPROVER_assert(sol1(string)==sol2(string),"sol1vsol2");
 }
+
+//Tested with cbmc and found no counterexamples, ie it is unsatisfiable
+//Brute Force Checking not done
+
