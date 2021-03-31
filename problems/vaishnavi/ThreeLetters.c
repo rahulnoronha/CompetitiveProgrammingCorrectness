@@ -145,14 +145,10 @@ long int sol3(char ch[])
 
 
 int main()
-{
-	char s[];
-    
-	/*Constraints:
-	>	1 <= |S| <= 10^5
-	>	S contains only lowercase English letters
-	*/
-	//Rahul, HELP, I don't understand how to write this constraints?
+{	int n;
+	int m = n>0?n:100000;
+	char x[m];
+	char * s = n>0?x:NULL;
 	
     __CPROVER_assert(sol1(s)==sol2(s),"sol1vsol2");
     __CPROVER_assert(sol1(s)==sol2(s),"sol1vsol3");
