@@ -56,7 +56,7 @@ long long int sol2(long long int n, long long int p)
 //https://www.codechef.com/viewsolution/23752668
 long long int sol3(long long int n, long long int p)
 {
-	long long int i,j,n,p,k;
+	long long int i,j,k;
 	//scanf("%lld %lld",&n,&p);
     i=(n-1)/2;
     j=(p-i)*(p-i)+(p-n)*(p-i)+(p-n)*(p-n);
@@ -74,14 +74,13 @@ long long int sol3(long long int n, long long int p)
 //https://www.codechef.com/viewsolution/22489892
 long long int sol4(long long int n, long long int p)
 {
-	sum=0;
+	long long int t,m,i,j,k,x,sum;
 	//scanf("%lld %lld",&n,&p);
 	m=n-( (n/2)+1 );
 	if(n==1 || m==0)
 	{
 		sum=(p)*p*p;
 		return sum;
-		continue;
 	}
 	i=1; //p/2 +1
 	j=p-m;
