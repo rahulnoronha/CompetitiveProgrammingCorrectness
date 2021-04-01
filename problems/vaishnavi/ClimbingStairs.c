@@ -39,7 +39,7 @@ void powerf(long long F[2][2],long long n) // RECURSIVE FUNCTION FOR MATRIX
 		mul(F,M);
 }
 
-long long fib(long long n) //FUNCTION CALLED FROM main
+long long fib1(long long n) //FUNCTION CALLED FROM main
 {
 	long long F[2][2]={0,1,1,1};
 	long long result;
@@ -58,7 +58,7 @@ long long fib(long long n) //FUNCTION CALLED FROM main
 char* sol1(long long int num, long long int guess)
 {
 	num++;
-	long long ways=fib(num);
+	long long ways=fib1(num);
 	ways=ways%1000000007;
 	long ones=0;
 	while(ways!=0)
@@ -110,7 +110,7 @@ char* sol2(long long int M, long long int G)
 
 
 //https://www.codechef.com/viewsolution/13425997
-long long int fib(long long int n)
+long long int fib3(long long int n)
 {
     long long int i = n - 1, a = 1, b = 0, c = 0, d = 1, t;
     if (n <= 0)
@@ -144,9 +144,9 @@ long long int countSetBits(long long int n)
 
 char* sol3(long long int number, long long int guess)
 {
-	long long int number, guess, ways, rem, number_of_ones;
+	long long int ways, rem, number_of_ones;
 	//scanf("%lld%lld",&number, &guess);
-    ways = fib(number + 1);
+    ways = fib3(number + 1);
     number_of_ones = 0;
     number_of_ones = countSetBits(ways);
     //printf("Number of ones = %ld\n", number_of_ones);
@@ -166,7 +166,7 @@ char* sol3(long long int number, long long int guess)
 int main()
 {
 	long long int n,g;
-	if((n<1||n>1000000)||(g<1||p>50))
+	if((n<1||n>1000000)||(g<1||g>50))
     {
     return 0;
     }
