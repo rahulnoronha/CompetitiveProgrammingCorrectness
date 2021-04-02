@@ -70,10 +70,10 @@ long long int sol3(long long int n, long long int a[])
 int main()
 {
 	long long int n;
-	if(n<1 || n>*100000)
+	if(n<1 || n>100000)
 		return 0;
 	int m = (n > 0 ? n : 1);
-	int x[m];
+	long long int x[m];
 	long long int *a = (n > 0 ? x : NULL);
 	__CPROVER_assert(sol1(n,a)==sol2(n,a),"sol1Vsol2");
     __CPROVER_assert(sol1(n,a)==sol3(n,a),"sol1Vsol3");
