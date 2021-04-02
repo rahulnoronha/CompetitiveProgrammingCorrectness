@@ -11,18 +11,18 @@ Constraints:
 //https://www.codechef.com/viewsolution/39317665
 long long int sol1(long long int n, long long int a[])
 {
-	//long long int n,i;
+    //long long int n,i;
     //scanf("%lld \n",&n);
     long long int i,sum=0,temp=0;
     for(i=0;i<n;i++)
-	{
+     {
         //scanf("%lld ",&a[i]);
         sum=sum+a[i];
     	temp=temp|sum;
     }
     long long int ans=sum;
     for(i=0;i<n;i++)
-	{
+    {
         temp=temp|a[i];
     }
     return temp;
@@ -76,7 +76,7 @@ int main()
 	long long int x[m];
 	long long int *a = (n > 0 ? x : NULL);
 	__CPROVER_assert(sol1(n,a)==sol2(n,a),"sol1Vsol2");
-    __CPROVER_assert(sol1(n,a)==sol3(n,a),"sol1Vsol3");
-    __CPROVER_assert(sol2(n,a)==sol3(n,a),"sol2Vsol3");
+    	__CPROVER_assert(sol1(n,a)==sol3(n,a),"sol1Vsol3");
+    	__CPROVER_assert(sol2(n,a)==sol3(n,a),"sol2Vsol3");
 	return 0;
 }
