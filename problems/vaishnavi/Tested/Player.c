@@ -83,3 +83,6 @@ int main()
   __CPROVER_assert(sol2(n)==sol4(n),"sol2Vsol4");
   __CPROVER_assert(sol3(n)==sol4(n),"sol3Vsol4");
 }
+
+//Tested using cbmc but time exceeded so we assume that it is unsatisfiable in this case
+//Bruteforce approach not done
