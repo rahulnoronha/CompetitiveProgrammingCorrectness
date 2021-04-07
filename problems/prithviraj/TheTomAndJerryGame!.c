@@ -70,9 +70,9 @@ int main()
     long long int TS;
     if(TS<1||TS>1000000000000000000)
         return 0;
-    __CPROVER__assert(sol1(TS)==sol2(TS),"sol1vsol2");
-    __CPROVER__assert(sol1(TS)==sol3(TS),"sol1vsol3");
-    __CPROVER__assert(sol2(TS)==sol3(TS),"sol2vsol3");
+    __CPROVER_assert(sol1(TS)==sol2(TS),"sol1vsol2");
+    __CPROVER_assert(sol1(TS)==sol3(TS),"sol1vsol3");
+    __CPROVER_assert(sol2(TS)==sol3(TS),"sol2vsol3");
 
 
 }
