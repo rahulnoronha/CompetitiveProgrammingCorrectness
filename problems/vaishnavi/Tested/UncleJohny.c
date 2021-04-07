@@ -170,3 +170,6 @@ int main()
   __CPROVER_assert(sol3(n,a,k)==sol4(n,a,k),"sol3Vsol4");
   return 0;
 }
+
+//Tested using CBMC and since Time exceeded so we assume it is unsatisfiable and that no counterexample was found
+//Bruteforce approach not attempted
