@@ -76,3 +76,6 @@ int main()
   __CPROVER_assert(sol3(i,n,q)==sol4(i,n,q),"sol3Vsol4");
 	return 0;
 }
+
+//Tested using cbmc and found no counterexample. Unsatisfiable
+//Bruteforce not attempted
