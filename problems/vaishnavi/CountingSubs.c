@@ -68,7 +68,7 @@ long long int sol3(int n, char *ar)
 }
 
 //https://www.codechef.com/viewsolution/28029771
-long long int sol3(int N, char *str)
+long long int sol4(int N, char *str)
 {
 	long int no1=0;
 	for(int i=0;i<N;i++)
@@ -94,6 +94,9 @@ int main()
 	char x[m];
 	char *a = (n > 0 ? x : NULL);
 	__CPROVER_assert(sol1(n,a)==sol2(n,a),"sol1Vsol2");
-  __CPROVER_assert(sol1(n,a)==sol3(n,a),"sol1Vsol3");
-  __CPROVER_assert(sol2(n,a)==sol3(n,a),"sol2Vsol3");
+        __CPROVER_assert(sol1(n,a)==sol3(n,a),"sol1Vsol3");
+        __CPROVER_assert(sol1(n,a)==sol4(n,a),"sol1Vsol4");
+        __CPROVER_assert(sol2(n,a)==sol3(n,a),"sol2Vsol3");
+        __CPROVER_assert(sol2(n,a)==sol4(n,a),"sol2Vsol4");
+        __CPROVER_assert(sol3(n,a)==sol4(n,a),"sol3Vsol4");
 }
