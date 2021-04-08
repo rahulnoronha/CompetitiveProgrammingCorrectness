@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 /*
-Carvans:	https://www.codechef.com/problems/CARVANS 
+Carvans:	https://www.codechef.com/problems/CARVANS
 */
 
 //https://www.codechef.com/viewsolution/39821573
@@ -40,13 +40,13 @@ int sol3(int n, int a[])
 {
 	register int i,j,count=0,flag=0;
 	for(i=n-1;i>=0;i--)
-	{     
+	{
         for(j=0; j<=i;j++)
 		{
             if(a[j]>=a[i])
-				count++;         
+				count++;
         }
-		if(count==j)flag++; 
+		if(count==j)flag++;
            count=0;
     }
 	return flag;
@@ -88,3 +88,6 @@ int main()
   __CPROVER_assert(sol3(n,a)==sol4(n,a),"sol3Vsol4");
     return 0;
 }
+
+//Tested using cbmc and found no counterexmaple
+//Bruteforce not attempted
