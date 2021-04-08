@@ -14,11 +14,11 @@ long long int sol1(int n, char* a)
         if(a[i]=='1')
         {
           m++;
-        }  
+        }
     }
     for(i=1;i<=m;i++)
     {
-      x=x+i;  
+      x=x+i;
     }
     return x;
 }
@@ -44,7 +44,7 @@ long long int sol3(int n, char *ar)
 	long long subs;
 	for(int i=0;i<n;i++)
          f[i]=0;
-    
+
         if(ar[0]=='1')
        {
            f[0]=1;
@@ -54,16 +54,16 @@ long long int sol3(int n, char *ar)
     {
         if(ar[i]=='1')
         {
-            f[i]=f[i-1]+1;          
+            f[i]=f[i-1]+1;
         }
         else
         	f[i]=f[i-1];
-    } 
+    }
     for(int i=1;i<n;i++)
     {
         if(ar[i]=='1')
     		subs=subs + f[i];
-    } 
+    }
     return subs;
 }
 
@@ -72,13 +72,13 @@ long long int sol4(int N, char *str)
 {
 	long int no1=0;
 	for(int i=0;i<N;i++)
-	{  
+	{
 	    if(str[i]=='1')
 		{   //printf("entered\t");
-	        no1++;  
+	        no1++;
 	    }
 	}
-    
+
 	long int count=(no1*(no1+1))/2;
 	return count;
 }
@@ -100,3 +100,6 @@ int main()
         __CPROVER_assert(sol2(n,a)==sol4(n,a),"sol2Vsol4");
         __CPROVER_assert(sol3(n,a)==sol4(n,a),"sol3Vsol4");
 }
+
+//Tested using cbmc and found counterexmaple for --unwind 3 for sol1vsol2 sol1vsol3 sol2vsol3 sol2vsol4 and sol3vsol4.
+//Bruteforce not attempted
