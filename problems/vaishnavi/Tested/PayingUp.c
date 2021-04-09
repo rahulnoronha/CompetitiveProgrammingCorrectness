@@ -103,3 +103,6 @@ int main()
   __CPROVER_assert(sol2(n,m,a)==sol3(n,m,a),"sol2Vsol3");
   return 0;
 }
+
+//Tested using cbmc and found counterexample for --unwind 1 for sol1vsol3 and sol2vsol3. Satisfiable
+//Bruteforce check not done
