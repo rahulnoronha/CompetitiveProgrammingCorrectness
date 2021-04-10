@@ -248,3 +248,6 @@ int main()
     __CPROVER_assert(sol3(n,d,a)==sol4(n,d,a),"sol3Vsol4");
 	
 }
+
+//Tested using cbmc and found no counterexample since time exceeded. Assume it is unsatisfiable.
+//Bruteforce check not attempted
