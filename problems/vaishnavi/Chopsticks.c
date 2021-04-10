@@ -142,6 +142,7 @@ void mergeSort(int arr[], int l, int r)
 
 int sol2(int n, int d, int arr[])
 {
+	int count;
 		mergeSort(arr, 0, n - 1);
 
 	//printArray(arr, n);
@@ -210,7 +211,7 @@ int fun(const void * a,const void * b)
 }
 int sol4(int n, int d, int a[])
 {
-	int i,n,d,a[100002],p=0,k;
+	int p=0,k;
 	qsort(a,n,sizeof(int),fun);
 	int count = 0;
     for(int i = 0;i<n-1;)
