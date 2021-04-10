@@ -130,3 +130,6 @@ int main()
     __CPROVER_assert(sol3(s)==sol4(s),"sol3Vsol4");
     return 0;
 }
+
+//Tested using cbmc and found no counterexample. Unsatisfiable
+//Bruteforce check not attempted
