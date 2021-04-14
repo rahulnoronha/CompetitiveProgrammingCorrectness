@@ -134,3 +134,6 @@ if(n<1||n>1000000000||k<1||k>10000)
 
 
 }
+
+//Tested using cbmc and found no counterexample. Unsatisifiable by time exceeded.
+//Bruteforce not attempted
