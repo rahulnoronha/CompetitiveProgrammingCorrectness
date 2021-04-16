@@ -44,7 +44,7 @@ int sol2(int a, int b)
 //https://www.codechef.com/viewsolution/45023487
 int sol3(int a, int b)
 {
-	int count=0,rem;
+	int i,count=0,rem;
 	for(i=a;i<=b;i++)
 	    {
 	        rem=i%10;
