@@ -173,7 +173,6 @@ int main()
     __CPROVER_assert(sol1(n,g)==sol2(n,g),"sol1Vsol2");
     __CPROVER_assert(sol1(n,g)==sol3(n,g),"sol1Vsol3");
     __CPROVER_assert(sol2(n,g)==sol3(n,g),"sol2Vsol3");
-    return 0;
 }
 
 //Tested using cbmc and time exceeded so we assume it is unsatisfiable and that we couldn't find any counterexmaple
