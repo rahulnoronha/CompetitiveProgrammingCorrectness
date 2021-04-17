@@ -15,7 +15,7 @@ int sol1(int n, int a[])
 int sol2(int n, int a[])
 {
 	int l=(n*(n-1))/2;
-	printf("%lld\n",l);
+	return l;
 }
 
 
