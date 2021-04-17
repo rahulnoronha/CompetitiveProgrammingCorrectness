@@ -147,7 +147,6 @@ int main()
     __CPROVER_assert(sol2(n,a)==sol3(n,a),"sol2Vsol3");
     __CPROVER_assert(sol2(n,a)==sol4(n,a),"sol2Vsol4");
     __CPROVER_assert(sol3(n,a)==sol4(n,a),"sol3Vsol4");
-    return 0;
 }
 
 //Tested using cbmc and found a counterexample for sol1vsol2 at --unwind 3 onwards.
