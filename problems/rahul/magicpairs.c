@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 /*
 Magic Pairs: https://www.codechef.com/problems/ALEXNUMB
 1<=n<=100000
@@ -45,3 +46,4 @@ int main()
         }
 }
 }
+//Bruteforce is a success and no counterexample is found
