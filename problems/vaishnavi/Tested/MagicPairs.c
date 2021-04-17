@@ -16,7 +16,7 @@ int sol1(int n, int a[])
 int sol2(int n, int a[])
 {
 	int l=(n*(n-1))/2;
-	printf("%lld\n",l);
+	return l;
 }
 
 
@@ -31,18 +31,7 @@ int main()
 	int m = (n > 0 ? n : 1);
   	int x[m];
   	int *a = (n > 0 ? x : NULL);
-  	if(n>100000||n<1)
-    {
-        return 0;
-    }
-    for (int i =0;i<n;i++)
-    {
-        if(a[i]<1||a[i]>1000000000)
-        {
-            return 0;
-        }
-    }
-    __CPROVER_assert(sol1(n,a)==sol2(n,a),"sol1Vsol2");
+  		__CPROVER_assert(sol1(n,a)==sol2(n,a),"sol1Vsol2");
     __CPROVER_assert(sol1(n,a)==sol3(n,a),"sol1Vsol3");;
     __CPROVER_assert(sol2(n,a)==sol3(n,a),"sol2Vsol3");
 }
