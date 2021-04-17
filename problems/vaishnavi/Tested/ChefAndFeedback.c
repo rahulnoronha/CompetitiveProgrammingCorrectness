@@ -122,13 +122,12 @@ int main()
 	for(int i=0;i<strlen(s)-1;i++)
 		if(s[i]!=0 || s[i]!=1)
 			return 0;
-		__CPROVER_assert(sol1(s)==sol2(s),"sol1Vsol2");
+    __CPROVER_assert(sol1(s)==sol2(s),"sol1Vsol2");
     __CPROVER_assert(sol1(s)==sol3(s),"sol1Vsol3");
     __CPROVER_assert(sol1(s)==sol4(s),"sol1Vsol4");
     __CPROVER_assert(sol2(s)==sol3(s),"sol2Vsol3");
     __CPROVER_assert(sol2(s)==sol4(s),"sol2Vsol4");
     __CPROVER_assert(sol3(s)==sol4(s),"sol3Vsol4");
-    return 0;
 }
 
 //Tested using cbmc and found no counterexample. Unsatisfiable
