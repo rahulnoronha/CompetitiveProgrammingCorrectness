@@ -84,3 +84,6 @@ int main()
     __CPROVER_assert(sol2(n,a)==sol4(n,a),"sol2Vsol4");
     __CPROVER_assert(sol3(n,a)==sol4(n,a),"sol3Vsol4");
 }
+
+//Tested using cbmc and found no counterexample and assume Unsatisfiable for --unwind 10 by time exceeded
+//Bruteforce not done
