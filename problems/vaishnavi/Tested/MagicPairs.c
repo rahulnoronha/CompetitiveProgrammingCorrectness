@@ -36,5 +36,5 @@ int main()
     __CPROVER_assert(sol2(n,a)==sol3(n,a),"sol2Vsol3");
 }
 
-//Tested using Bruteforce and it failed
-//Tested using cbmc and it is satisfiable and found counterexample for --unwind 2
+//Tested using Bruteforce and it found no counterexample
+//Tested using cbmc and it is unsatisfiable and found no counterexample for --unwind 1 by time exceeded
