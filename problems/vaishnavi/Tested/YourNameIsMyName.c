@@ -118,3 +118,6 @@ int main()
     __CPROVER_assert(sol2(w,m)==sol3(w,m),"sol2Vsol3");
     return 0;
 }
+
+//Tested using cbmc and found no counterexample. Unsatisfiable by time exceeded for --unwind 4
+//Bruteforce not attempted

@@ -158,9 +158,10 @@ int main()
 	int m = (n > 0 ? n : 1);
   	int x[m];
   	int *a = (n > 0 ? x : NULL);
-  		__CPROVER_assert(sol1(n,a)==sol2(n,a),"sol1Vsol2");
+    __CPROVER_assert(sol1(n,a)==sol2(n,a),"sol1Vsol2");
     __CPROVER_assert(sol1(n,a)==sol3(n,a),"sol1Vsol3");
-    __CPROVER_assert(sol1(n,a)==sol4(n,a),"sol1Vsol4");
     __CPROVER_assert(sol2(n,a)==sol3(n,a),"sol2Vsol3");
-    return 0;
+   
 }
+//Tested using cbmc and counterexample found for --uniwnd 1 for all the 3 assertions
+//Bruteforce not attempted

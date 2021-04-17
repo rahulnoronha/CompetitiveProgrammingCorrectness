@@ -55,11 +55,13 @@ int main()
 	{
     	return 0;
     }
-    	__CPROVER_assert(sol1(n,a)==sol2(n,a),"sol1Vsol2");
+    __CPROVER_assert(sol1(n,a)==sol2(n,a),"sol1Vsol2");
     __CPROVER_assert(sol1(n,a)==sol3(n,a),"sol1Vsol3");
     __CPROVER_assert(sol1(n,a)==sol4(n,a),"sol1Vsol4");
     __CPROVER_assert(sol2(n,a)==sol3(n,a),"sol2Vsol3");
     __CPROVER_assert(sol2(n,a)==sol4(n,a),"sol2Vsol4");
     __CPROVER_assert(sol3(n,a)==sol4(n,a),"sol3Vsol4");
-    return 0;
 }
+
+//Tested using cbmc and counterexample found for --uniwnd 1 for all the 6 assertions
+//Bruteforce not attempted
