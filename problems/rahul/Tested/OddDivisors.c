@@ -83,3 +83,6 @@ int main()
 	__CPROVER_assert(sol1(l,r)==sol3(l,r),"sol1vsol3");
 	__CPROVER_assert(sol2(l,r)==sol3(l,r),"so21vsol3");
 }
+
+//Tested using CBMC, --unwind 10 time exceeded, Unsatisfiable
+//Bruteforce not done
