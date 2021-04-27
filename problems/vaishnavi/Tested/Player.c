@@ -3,6 +3,10 @@
 float expect(int);
 float e[3002];
 
+/*
+Player: https://www.codechef.com/problems/RRPLAYER
+*/
+
 //https://www.codechef.com/viewsolution/41288200
 float sol1(int n)
 {
