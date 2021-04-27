@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 /*
-Suraj Goes Shopping:
+Suraj Goes Shopping: https://www.codechef.com/problems/ANUBTG
 Constraints:
 >	1 <= N <= 1000
 >	1 <= Cost of items <= 1000
