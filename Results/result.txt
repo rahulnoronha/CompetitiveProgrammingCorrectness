@@ -1,1 +1,1 @@
-Results are stored in rahul/Results
+Results are stored in the following link https://github.com/rahulnoronha/CompetitiveProgrammingCorrectness/tree/main/problems/rahul/Results
