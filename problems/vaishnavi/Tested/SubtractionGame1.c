@@ -8,7 +8,7 @@ int gcd1(int a,int b)
 {
     if(b==0)
     return a;
-    return gcd(b,a%b);
+    return gcd1(b,a%b);
 }
 int sol1(int n, int arr[])
 {
